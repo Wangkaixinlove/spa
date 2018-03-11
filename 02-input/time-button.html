@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button"  value="6秒" id="btn">
+	</body>
+	<script>
+		var id;
+		var btn=document.getElementById("btn");
+		var value=parseInt(btn.value.slice(0,2));
+		btn.onclick=function(){
+			alert(value);
+			id=setInterval("time()",1000);
+		}
+		function time(){
+			value--;
+			btn.value="还剩"+value+"秒";
+			if(value==0){
+				clearInterval(id);
+				btn.value="重新发送";
+			}
+		}
+	</script>
+</html>

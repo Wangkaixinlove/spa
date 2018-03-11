@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#pro1{
+				width: 300px;
+				height: 20px;
+				border: 1px solid;
+				border-radius: 30px;
+				background-color: darkgray;
+			}
+			#pro2{
+				height: 20px;
+				background-color: royalblue;
+				border-radius: 30px;
+				animation: move 3s;
+				animation-fill-mode: forwards;
+				text-align: center;
+			}
+			 @keyframes move{
+			 	0%:{
+			 		width: 0;
+			 	}
+			 	100%{
+			 		width: 100%;
+			 	}
+			 }
+		</style>
+	</head>
+	<body>
+		<div id="pro1">
+			<div id="pro2" style="width: 0;">10%</div><br/>
+		</div>
+	</body>
+	<script>
+		var id;
+		var pro2=document.getElementById("pro2");
+		var count=0;
+		id=setInterval(function(){
+			count++;
+			pro2.innerHTML=count+"%";
+			if(count==100){
+			clearInterval(id);
+		}
+		},25);
+	</script>
+</html>

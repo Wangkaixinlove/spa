@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		0<input type="range" min="0" max="100" step="1"  id="old" value="">100
+		<p id="people"></p>
+	</body>
+	<script>
+		var people=document.getElementById("people");
+		var old=document.getElementById("old");
+		people.innerHTML="您现在"+old.value+"岁";
+		old.onchange=function(){
+		people.innerHTML="您现在"+old.value+"岁";
+		}
+	</script>
+</html>
