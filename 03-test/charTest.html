@@ -35,25 +35,32 @@
 	var widthErr=document.getElementById("widthErr");
 	var heightErr=document.getElementById("heightErr");
 	width.onkeydown=function(e){
+		widthErr.innerHTML="";
 		if(width.value==null || width.value=="")
 		{
-			widthErr.innerHTML="";
+			widthErr.innerHTML="输入不能为空";
 		}
-		if(!/\d/.test(e.key) &&!/./.test(e.key)){
+		if(!/\d/.test(e.key)){
 			if(e.keyCode!=9 && e.keyCode!=8)
 			{
 				widthErr.innerHTML="输入格式必须是数字";
 		    }
+			return false;
 		}
 	}
 	
 	height.onkeydown=function(e){
-		if(!/\d/.test(e.key) &&!/./.test(e.key)){
+		heightErr.innerHTML="";
+		if(height.value==null || height.value=="")
+		{
+			heightErr.innerHTML="输入不能为空";
+		}
+		if(!/\d/.test(e.key)){
 			if(e.keyCode!=9 && e.keyCode!=8)
 			{
 				heightErr.innerHTML="输入格式必须是数字";
 		    }
-			
+			return false;
 		}
 	}
 	

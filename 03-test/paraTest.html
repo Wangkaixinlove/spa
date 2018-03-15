@@ -29,31 +29,42 @@
 </body>
 <script src="index.js"></script>
 <script>
-	//字符级
+	//字段级
 	var width=document.getElementById("width");
 	var height=document.getElementById("height");
 	var widthErr=document.getElementById("widthErr");
 	var heightErr=document.getElementById("heightErr");
 	width.onkeydown=function(e){
+		widthErr.innerHTML="";
+		if(e.keyCode==9){
 		if(width.value==null || width.value=="")
 		{
-			widthErr.innerHTML="";
+			widthErr.innerHTML="输入不能为空";
 		}
 		if(isNaN(Number(width.value))){
-			if(e.keyCode!=9 && e.keyCode!=8)
-			{
 				widthErr.innerHTML="输入格式必须是数字";
-		    }
+				return false;
+		}
+		if(Number(width.value)<0){
+				widthErr.innerHTML="宽度必须为正数";
+				return false;
+		}
 		}
 	}
 	
 	height.onkeydown=function(e){
+		heightErr.innerHTML="";
+		if(e.keyCode==9){
+		if(height.value==null || height.value=="")
+		{
+			heightErr.innerHTML="输入不能为空";
+		}
 		if(isNaN(Number(height.value))){
-			if(e.keyCode!=9 && e.keyCode!=8)
-			{
-				heightErr.innerHTML="输入格式必须是数字";
-		    }
-			
+				height.innerHTML="输入格式必须是数字";
+		}
+		if(Number(height.value)<0){
+				height.innerHTML="长度必须为正数";
+		}
 		}
 	}
 	

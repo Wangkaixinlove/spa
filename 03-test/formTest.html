@@ -27,30 +27,59 @@
   
 </div>
 </body>
-<script src="index.js"></script>
+
 <script>
 	//字符级
 	var width=document.getElementById("width");
 	var height=document.getElementById("height");
+	 var pre=document.getElementById("preimeter");
 	var widthErr=document.getElementById("widthErr");
 	var heightErr=document.getElementById("heightErr");
 	var data=document.getElementById("cal");
 	data.onclick=function(){
+		widthErr.innerHTML="";
 		if(width.value==null || width.value=="")
 		{
-			widthErr.innerHTML="";
+			widthErr.innerHTML="输入不能为空";
 		}
+		heightErr.innerHTML="";
 		if(height.value==null || height.value=="")
 		{
-			height.innerHTML="";
+			heightErr.innerHTML="输入不能为空";
 		}
 		if(isNaN(Number(width.value))){
-				widthErr.innerHTML="输入格式必须是数字";
+			widthErr.innerHTML="输入格式必须是数字";
+			return false;
 		}
+		if(Number(width.value)<0){
+				widthErr.innerHTML="必须是正数";
+				return false;
+			}
 		if(isNaN(Number(height.value))){
-				heightErr.innerHTML="输入格式必须是数字";
+			heightErr.innerHTML="输入格式必须是数字";
+			return false;
 		}
+		if(Number(height.value)<0){
+				heightErr.innerHTML="必须是正数";
+				return false;
+			}
+		else{
+		if(width.value!= null && width.value!="" && height.value!=null && height.value!=""){
+		  var pre=document.getElementById("preimeter");
+		  pre.value=(parseFloat(width.value)+parseFloat(height.value))*2;
+		  var area=document.getElementById('area');
+		  area.value=parseFloat(width.value)*parseFloat(height.value);
+		  }
+		  else{
+		  var area=document.getElementById('area');
+		  area.value=null;
+		  }
+		}
+		
 	}
+	
+	
+	
 	
 	
 </script>
