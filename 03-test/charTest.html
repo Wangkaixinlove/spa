@@ -40,10 +40,10 @@
 		{
 			widthErr.innerHTML="输入不能为空";
 		}
-		if(!/\d/.test(e.key)){
+		if(!/^[0-9.]$/.test(e.key)){
 			if(e.keyCode!=9 && e.keyCode!=8)
 			{
-				widthErr.innerHTML="输入格式必须是数字";
+				widthErr.innerHTML="输入格式必须是正数";
 		    }
 			return false;
 		}
@@ -55,10 +55,10 @@
 		{
 			heightErr.innerHTML="输入不能为空";
 		}
-		if(!/\d/.test(e.key)){
+		if(!/^[0-9.]$/.test(e.key)){
 			if(e.keyCode!=9 && e.keyCode!=8)
 			{
-				heightErr.innerHTML="输入格式必须是数字";
+				heightErr.innerHTML="输入格式必须是正数";
 		    }
 			return false;
 		}

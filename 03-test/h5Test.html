@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link type="text/css" rel="stylesheet" href="index.css">
+  </head>
+<body>
+<div class="rectangle">
+  <form>
+  <label for="width">宽度</label>
+  <input class="rectangle__width" id="width" type="number" min="0" step="0.01" required>
+  <span style="color: red;" id="widthErr">*</span>
+  <br/>
+  <label for="height">高度</label>
+  <input class="rectangle__height" id="height" type="number"min="0" step="0.01"  required>
+  <span style="color: red;" id="heightErr">*</span>
+  <br/>
+  <input  type="submit" id="cal" value="计算">
+  <br/>
+  <label for="preimeter">周长</label>
+  <input class="rectangle__preimeter" id="preimeter" type="textbox">
+  <br/>
+  <label for="area">面积</label>
+  <input class="rectangle__area" id="area" type="textbox">
+  </form>
+</div>
+<div class="caculate" >
+  
+</div>
+</body>
+<script>
+  var btn=document.getElementById("cal");
+  btn.onclick=function(e){
+  var width=document.getElementById("width").value;
+  var height=document.getElementById("height").value;
+  if(width != null && width!="" && height!=null && height !=""){
+  e.preventDefault();
+  var pre=document.getElementById("preimeter");
+  pre.value=(parseFloat(width)+parseFloat(height))*2;
+  var area=document.getElementById('area');
+  area.value=parseFloat(width)*parseFloat(height);
+  }
+  else{
+  var area=document.getElementById('area');
+  area.value=null;
+  }
+}
+</script>
+
+</html>
