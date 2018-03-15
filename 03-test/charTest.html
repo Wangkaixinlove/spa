@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link type="text/css" rel="stylesheet" href="index.css">
+  </head>
+<body>
+<div class="rectangle">
+  <label for="width">宽度</label>
+  <input class="rectangle__width" id="width" type="textbox">
+  <span style="color: red;" id="widthErr"></span>
+  <br>
+  <label for="height">高度</label>
+  <input class="rectangle__height" id="height" type="textbox">
+  <span style="color: red;" id="heightErr"></span>
+  <br>
+  <input class="rectangle__calc" type="button" id="cal" value="计算">
+  <br>
+  <label for="preimeter">周长</label>
+  <input class="rectangle__preimeter" id="preimeter" type="textbox">
+  <br>
+  <label for="area">面积</label>
+  <input class="rectangle__area" id="area" type="textbox">
+</div>
+<div class="caculate" >
+  
+</div>
+</body>
+<script src="index.js"></script>
+<script>
+	//字符级
+	var width=document.getElementById("width");
+	var height=document.getElementById("height");
+	var widthErr=document.getElementById("widthErr");
+	var heightErr=document.getElementById("heightErr");
+	width.onkeydown=function(e){
+		if(width.value==null || width.value=="")
+		{
+			widthErr.innerHTML="";
+		}
+		if(!/\d/.test(e.key) &&!/./.test(e.key)){
+			if(e.keyCode!=9 && e.keyCode!=8)
+			{
+				widthErr.innerHTML="输入格式必须是数字";
+		    }
+		}
+	}
+	
+	height.onkeydown=function(e){
+		if(!/\d/.test(e.key) &&!/./.test(e.key)){
+			if(e.keyCode!=9 && e.keyCode!=8)
+			{
+				heightErr.innerHTML="输入格式必须是数字";
+		    }
+			
+		}
+	}
+	
+</script>
+
+ </html>
