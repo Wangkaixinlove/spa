@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+  <title>电子表格</title>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/handsontable/0.37.0/handsontable.min.css">
+  <style></style>
+</head>
+<body>
+<div class="main">
+</div>  
+<script src="../jQuery.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/handsontable/0.37.0/handsontable.min.js"></script>
+<script>
+	$(function() {
+  var data = [//设置数据
+    ['user_name', '用户名', 'C(9)', 'N', 'Y', ''],
+    ['password', '密码', 'C(9)', 'N', 'N', ''],
+    ['gender', '性别', 'C(1)', 'Y', 'N', ''],
+    ['address', '家庭住址', 'C(100)', 'Y', 'N', ''],
+    ['mobile', '联系电话', 'C(15)', 'Y', 'N', ''],
+    ['home', '籍贯', 'C(20)', 'Y', 'N', '']
+  ];
+
+  var container = $('.main');
+  var hot = new Handsontable(container.get(0), {//创建表格
+    data: data,
+    contextMenu: true,          // 启用快捷菜单
+    manualRowResize : true,     // 允许行拖动  
+    manualColumnResize : true,  // 允许列拖动 
+    rowHeaders: true,
+    //colHeaders: true
+    colHeaders: [//表头
+      '字段',
+      '说明',
+      '数据类型',
+      '允许为空',
+      '主键',
+      '备注'
+    ]
+  });
+});
+</script>
+</body>
+</html>

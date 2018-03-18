@@ -1,0 +1,83 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+  <title>二进熵函数曲线</title>
+  <style>
+  	*{
+	  margin: 0;
+	  padding: 0;
+	  width: 100%;
+	  height: 100%;
+	}
+	.main {
+	  width: 60%;
+	  height: 70%;
+	  margin: 40px auto;
+	}
+  </style>
+</head>
+<body>
+<div class="main">
+</div>  
+<script src="../jQuery.js"></script>
+<script src="//cdn.bootcss.com/echarts/4.0.2/echarts.min.js"></script>
+<script>
+$(function() {
+  var xData = [],//x,y轴的值
+    yData = [];
+
+  for(var i = 0; i <= 1; i += 0.1) {//想数组中添加x、y值
+    xData.push(roundFractional(i, 1));
+    yData.push(roundFractional(h(i), 2));
+  }
+
+  var myChart = echarts.init($('.main').get(0));
+
+  var option = {
+    title: {
+      text: '二进熵函数曲线'
+    },
+    tooltip: {},
+    legend: {
+      data:['信息量']
+    },
+    xAxis: {//x轴
+      data: xData
+    },
+    yAxis: {},//y轴，不需设置数据，会根据series中的y值自己设置
+    series: [{
+      name: '信息量',//y轴含义
+      type: 'line',//图像类型 line bar
+      smooth: 'true',//圆滑曲线
+      data: yData
+    }]
+  };
+
+myChart.setOption(option);
+
+  /**
+   * 小数点后面保留第 n 位
+   *
+   * @param x 做近似处理的数
+   * @param n 小数点后第 n 位
+   * @returns 近似处理后的数 
+   */
+  //不是很理解这一步是干啥的
+  function roundFractional(x, n) {
+    return Math.round(x * Math.pow(10, n)) / Math.pow(10, n);
+  }
+//计算二进熵函数
+  function h(p) {
+  	if(p!=0){
+    return -1 * (p * Math.log2(p) + (1-p)* Math.log2(1-p));
+   }
+  	else{
+  		return 0;
+  	}
+  }
+});
+
+</script>
+</body>
+</html>
