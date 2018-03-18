@@ -40,12 +40,13 @@
 		{
 			widthErr.innerHTML="输入不能为空";
 		}
-		if(!/^[0-9.]$/.test(e.key)){
-			if(e.keyCode!=9 && e.keyCode!=8)
+		if(e.keyCode!=9 && e.keyCode!=8){
+			if(!/^[0-9.]$/.test(e.key))
 			{
 				widthErr.innerHTML="输入格式必须是正数";
-		    }
+		    
 			return false;
+			}
 		}
 	}
 	
@@ -55,12 +56,13 @@
 		{
 			heightErr.innerHTML="输入不能为空";
 		}
-		if(!/^[0-9.]$/.test(e.key)){
-			if(e.keyCode!=9 && e.keyCode!=8)
+		if(e.keyCode!=9 && e.keyCode!=8){
+			if(!/^[0-9.]$/.test(e.key))
 			{
 				heightErr.innerHTML="输入格式必须是正数";
+				return false;
 		    }
-			return false;
+			
 		}
 	}
 	

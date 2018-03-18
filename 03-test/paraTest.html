@@ -41,7 +41,7 @@
 		{
 			widthErr.innerHTML="输入不能为空";
 		}
-		if(!/^[0-9.]+$/.test(height.value)){
+		if(!/^[0-9.]+$/.test(width.value) && e.keyCode!=8){
 				widthErr.innerHTML="输入格式必须是数字";
 				return false;
 		}
@@ -59,12 +59,12 @@
 		{
 			heightErr.innerHTML="输入不能为空";
 		}
-		if(!/^[0-9.]+$/.test(height.value)){
-				height.innerHTML="输入格式必须是数字";
-				height.value=false;
+		if(!/^[0-9.]+$/.test(height.value)&& e.keyCode!=8){
+				heightErr.innerHTML="输入格式必须是数字";
+				return false;
 		}
 		if(Number(height.value)<0){
-				height.innerHTML="长度必须为正数";
+				heightErr.innerHTML="长度必须为正数";
 				return false;
 		}
 		}
