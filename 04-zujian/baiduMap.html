@@ -14,19 +14,19 @@
 <body>
 	<div id="allmap"></div>
 </body>
-<script src="http://api.map.baidu.com/api?v=3.0&ak=MPNgOjHjzl1G8vDIHlyMTT0qDNf4Q0D2"></script>
+<script src="http://api.map.baidu.com/api?v=3.0&ak=IMTpcnkQokTcIxGgBxqwUaC0HO5B4yRM"></script>
 <script type="text/javascript">
 	// 百度地图API功能
 	var sContent =
-	"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>天安门</h4>" + 
-	"<img style='float:right;margin:4px' id='imgDemo' src='../img/tianAnMen.jpg' width='139' height='104' title='天安门'/>" + 
-	"<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>天安门坐落在中国北京市中心,故宫的南侧,与天安门广场隔长安街相望,是清朝皇城的大门...</p>" + 
+	"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>河北师大软件学院</h4>" + 
+	"<img style='float:right;margin:4px' id='imgDemo' src='../img/rjxy.jpg' width='139' height='104' title='软件学院'/>" + 
+	"<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>河北师范大学软件工程专业开设于2007年，专业隶属河北师范大学软件学院</p>" + 
 	"</div>";
 	var map = new BMap.Map("allmap");
-	var point = new BMap.Point(116.404, 39.915);
+	var point = new BMap.Point(114.5292841783,38.0035387911);
 	var marker = new BMap.Marker(point);
 	var infoWindow = new BMap.InfoWindow(sContent);  // 创建信息窗口对象
-	map.centerAndZoom(point, 15);
+	map.centerAndZoom(point, 200);
 	map.addOverlay(marker);
 	marker.addEventListener("click", function(){          
 	   this.openInfoWindow(infoWindow);
