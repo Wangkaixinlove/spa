@@ -37,9 +37,10 @@
 	width.onkeydown=function(e){
 		widthErr.innerHTML="";
 		if(e.keyCode==9){
-		if(width.value==null || width.value=="")
+		if(width.value=="" || width.value==null)
 		{
-			widthErr.innerHTML="输入不能为空";
+      widthErr.innerHTML="输入不能为空";
+      return false;
 		}
 		if(!/^[0-9.]+$/.test(width.value) && e.keyCode!=8){
 				widthErr.innerHTML="输入格式必须是数字";
@@ -58,6 +59,7 @@
 		if(height.value==null || height.value=="")
 		{
 			heightErr.innerHTML="输入不能为空";
+			return false;
 		}
 		if(!/^[0-9.]+$/.test(height.value)&& e.keyCode!=8){
 				heightErr.innerHTML="输入格式必须是数字";
